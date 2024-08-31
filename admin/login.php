@@ -1,3 +1,11 @@
+<?php
+    if(session_status() === PHP_SESSION_NONE){
+        session_start();
+        include_once ("../framework/functions.php");
+        include_once ("../framework/config.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +16,7 @@
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body >
-    <?php
+    <?php  
             if(isset($_POST["submit"])){
                 $username=validateValue($_POST["username"]);
                 $password=validateValue($_POST["password"]);
@@ -23,6 +31,7 @@
                             $_SESSION["admin_login"]="yes";
                             $_SESSION["admin_id"]=$row["admin_id"];
                             $_SESSION["admin_username"]=$row["admin_username"];
+                            $_SESSION["admin_email"]=$row["admin_email"];
                             $_SESSION["admin_art"]=$row["admin_art"];
                             alert("S","welcome $username");
                             redirect("index.php",1);

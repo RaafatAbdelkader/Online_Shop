@@ -1,5 +1,7 @@
 
-    </div>
+            </div>
+        </div>
+   </div>
     <footer>
         <div class="fixed-bottom bg-light">
             <p></p>

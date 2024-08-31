@@ -7,13 +7,14 @@ function validateValue($value){
 
 function alert($art="S",$msg){
     ?>
-        <div class="alert alert-<?php 
+        <div class="alert text-center alert-<?php 
                                     if ($art=="S")
                                         echo"success";
                                     else
                                         echo "danger";
-                                ?>">
-                                <?PHP echo $msg ?>
+                                ?>"><?PHP
+                                    echo $msg 
+                                ?>
         </div>
     <?php
     
@@ -27,6 +28,11 @@ function enc_psw($password){
     $psw = sha1($psw);
     $psw=substr($psw,0,5);
     return $psw;
+}
+function getPageName(){
+    $pageName=$_SERVER['PHP_SELF'];
+    $index=strrpos($pageName,"/")+1;
+    return substr($pageName,$index);
 }
 
 ?>
