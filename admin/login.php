@@ -2,7 +2,6 @@
     if(session_status() === PHP_SESSION_NONE){
         session_start();
         include_once ("../framework/functions.php");
-        include_once ("../framework/config.php");
     }
 ?>
 
@@ -25,6 +24,7 @@
                     $con_link =db_connect();
                     $sql="select * from admins where admin_username='$username' and admin_password='$password'";
                     $result=mysqli_query($con_link,$sql);
+                    $con_link->close();
                     if($result){
                         if(mysqli_num_rows($result)>0){
                             $row=mysqli_fetch_array($result);
@@ -36,15 +36,15 @@
                             alert("S","welcome $username");
                             redirect("index.php",1);
                         }else{
-                            alert("f","Wrong username or password");
+                            alert("f","Falsche Daten, Bitte erneut versuchen!");
                             redirect("index.php");
                         }
                     }else{
-                        alert("f","SQL error");
+                        alert("f","SQL Fehler");
                         redirect("index.php");
                     }
                 }else{
-                    alert("f","Please fill all data ");
+                    alert("f","Bitte alle Daten eingeben");
                     redirect("index.php");
                 }
 
@@ -57,11 +57,11 @@
                                  Please sign in!
                             </div>
                             <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>">
-                                <label for="username inline col-md-1">Username</label>
+                                <label for="username inline col-md-1">Benutzername</label>
                                 <input type="text" class="form-control col-md-3" name="username" id="username" placeholder="ex000">
                                 <label for="psw">Password</label>
                                 <input type="password"  name="password" class="form-control" id="psw">  
-                                <button type="submit" class="btn btn-primary col-md-12 mt-3" name="submit">login</button>
+                                <button type="submit" class="btn btn-primary col-md-12 mt-3" name="submit">Login</button>
                             </form>
                         </div>
                     </div>

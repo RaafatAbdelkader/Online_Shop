@@ -5,7 +5,7 @@ function validateValue($value){
    return $newValue;
 }
 
-function alert($art="S",$msg){
+function alert($art="S",$msg=" "){
     ?>
         <div class="alert text-center alert-<?php 
                                     if ($art=="S")

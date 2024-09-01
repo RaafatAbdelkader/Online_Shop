@@ -1,9 +1,8 @@
 
 <?php 
     if(session_status() === PHP_SESSION_NONE){
-        session_start();
         include_once ("../framework/functions.php");
-        include_once ("../framework/config.php");
+        redirect("profile_edit_acc.php",0);
     }
 
     if(isset($_SESSION['admin_login'])){
@@ -15,7 +14,7 @@
                                         echo 'secondary';
                                     else
                                         echo 'primary';
-                                    ?>'>Edit Account
+                                    ?>'>Account Bearbeiten
                                 </a>
                             </li>
                             <li class="btn col-md-12 mb-4">
@@ -24,11 +23,11 @@
                                         echo 'secondary';
                                     else
                                         echo 'primary';
-                                    ?>'>Edit Password
+                                    ?>'>Passwort Ändern
                                 </a>
                             </li>
                              <li class="btn col-md-12 mb-4">
-                                <a href="logout.php" class='btn btn-primary col-md-12'>Log out</a>
+                                <a href="logout.php" class='btn btn-primary col-md-12'>Ausloggen</a>
                             </li>
                         </ul>
                     </div>
