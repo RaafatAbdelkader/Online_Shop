@@ -72,7 +72,7 @@
                                                         <span style="cursor: not-allowed;" class="bi bi-pencil"></span>
                                                     </td>
                                                     <td> 
-                                                        <span style="cursor: not-allowed;" class="bi bi-trash text-danger"></span>
+                                                        <span style="cursor: not-allowed;" class="bi bi-trash text-dark"></span>
                                                     </td>
                                                 <?php
                                             }

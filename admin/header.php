@@ -28,7 +28,7 @@
                                 <a class="nav-link <?PHP if(stristr(getPageName(),"admin"))echo 'active'?>"href="admins_view.php">Admins</a>
                             </li>
                             <li class="nav-item col">
-                                <a class="nav-link <?PHP if(stristr(getPageName(),"categor"))echo 'active'?>" href="categories.php">Kategorien</a>
+                                <a class="nav-link <?PHP if(stristr(getPageName(),"categor"))echo 'active'?>" href="categories_view.php">Kategorien</a>
                             </li>
                             <li class="nav-item col">
                                 <a class="nav-link <?PHP if(stristr(getPageName(),"profile"))echo 'active'?>" href="profile_edit_acc.php">Profil</a>

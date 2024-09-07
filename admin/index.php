@@ -5,7 +5,7 @@
 
     if(isset($_SESSION["admin_login"])){
         include_once("header.php");
-    
+        include_once("products_view.php");
         include_once("footer.php");
     }else{
         include_once("login.php");
