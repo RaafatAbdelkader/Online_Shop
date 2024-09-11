@@ -41,7 +41,7 @@
                     $con->close();
                     if($result){
                         alert("S","Daten wurden erfolgreich aktualisiert");
-                        redirect("products_view.php");
+                        redirect("index.php");
                     }else{
                         alert("f","Produkt konnte wegen SQL-Fehler nicht gespeichert werden!");
                         redirect("products_add.php");
