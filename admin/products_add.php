@@ -20,7 +20,7 @@
                 || $new_product_desc==NULL 
                 || $new_product_cat<1
                 ||$new_product_price<1
-                ||strlen($product_image_path<1)
+                ||strlen($product_image_path)<1
             ){
                 alert("f","Bitte alle Daten eingeben!");
                 redirect("products_add.php");
